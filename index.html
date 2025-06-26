@@ -20,22 +20,46 @@
       <input type="date" id="date-change">
     </label><br>
 
+    <!-- イベント発生状況を表示するテーブル -->
+    <table border="1" id="event-table">
+      <thead>
+        <tr>
+          <th>focus</th>
+          <th>focusin</th>
+          <th>blur</th>
+          <th>change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="cell-focus"></td>
+          <td id="cell-focusin"></td>
+          <td id="cell-blur"></td>
+          <td id="cell-change"></td>
+        </tr>
+      </tbody>
+    </table>
+
     <script>
       // ① focus
       document.getElementById('date-focus').addEventListener('focus', function(e) {
         if (!e.target.value) e.target.value = '1970-01-01';
+        document.getElementById('cell-focus').textContent = '〇';
       });
       // ② focusin
       document.getElementById('date-focusin').addEventListener('focusin', function(e) {
         if (!e.target.value) e.target.value = '1970-01-01';
+        document.getElementById('cell-focusin').textContent = '〇';
       });
       // ③ blur
       document.getElementById('date-blur').addEventListener('blur', function(e) {
         if (!e.target.value) e.target.value = '1970-01-01';
+        document.getElementById('cell-blur').textContent = '〇';
       });
       // ④ onchange
       document.getElementById('date-change').addEventListener('change', function(e) {
         if (!e.target.value) e.target.value = '1970-01-01';
+        document.getElementById('cell-change').textContent = '〇';
       });
     </script>
   </body>
