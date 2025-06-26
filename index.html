@@ -1,3 +1,42 @@
 <html>
+  <body>
+    <!-- ① focusイベント発火時に1970/01/01がデフォルト値と設定されるinput -->
+    <label>① focus時にデフォルト値設定:
+      <input type="date" id="date-focus">
+    </label><br>
 
+    <!-- ② focusinイベント発火時にデフォルト値が設定されるinput -->
+    <label>② focusin時にデフォルト値設定:
+      <input type="date" id="date-focusin">
+    </label><br>
+
+    <!-- ③ blurイベント発火時にデフォルト値が設定されるinput -->
+    <label>③ blur時にデフォルト値設定:
+      <input type="date" id="date-blur">
+    </label><br>
+
+    <!-- ④ onchangeイベント発火時にデフォルト値が設定されるinput -->
+    <label>④ onchange時にデフォルト値設定:
+      <input type="date" id="date-change">
+    </label><br>
+
+    <script>
+      // ① focus
+      document.getElementById('date-focus').addEventListener('focus', function(e) {
+        if (!e.target.value) e.target.value = '1970-01-01';
+      });
+      // ② focusin
+      document.getElementById('date-focusin').addEventListener('focusin', function(e) {
+        if (!e.target.value) e.target.value = '1970-01-01';
+      });
+      // ③ blur
+      document.getElementById('date-blur').addEventListener('blur', function(e) {
+        if (!e.target.value) e.target.value = '1970-01-01';
+      });
+      // ④ onchange
+      document.getElementById('date-change').addEventListener('change', function(e) {
+        if (!e.target.value) e.target.value = '1970-01-01';
+      });
+    </script>
+  </body>
 </html>
